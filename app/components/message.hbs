@@ -1,0 +1,19 @@
+<section class="message">
+  <div class="message-header">
+    <section class="profile">
+      <div class="profile-picture">
+        <img src={{this.photoUrl}} alt="Profile" height="100%" width="100%">
+      </div>
+      <div class="profile-header">
+        <span class="profile-title">{{@message.author.name}}</span>
+        <small>{{this.timestamp}}</small>
+      </div>
+    </section>
+    <section class="delete-section">
+      <img src="/assets/icons/trash.svg" alt="Remove item" data-delete-message={{@message.id}}>
+    </section>
+  </div>
+  <div class="message-body">
+    {{@message.content}}
+  </div>
+</section>

@@ -1,16 +1,24 @@
-<h3 class="header">Ember Lazy Load</h3>
+<div class="container">
+  <header>
+    <img src="/assets/icons/menu.png" alt="Menu Icon">
+    <h1 class="title">Messages</h1>
+  </header>
 
+  <section class="message-container" {{on "scroll" this.handleScrollEvent}}>
+    <section {{on "click" this.deleteMessage}}>
+      {{#each this.messageList as | message | }}
+        <Message @message={{message}}/>
+      {{/each}}
+    </section>
 
-<nav>
-  <ul {{on "scroll" this.handleScrollEvent}}>
-    {{#each this.messageList as | message | }}
-      <li>
-        <h5>{{message.author.name}}</h5>
-        {{message.content}}
-      </li>
-    {{/each}}
     {{#if this.isLoading}}
-      <span class="loader">Loadding.....</span>
+      <footer>
+        <span class="loader"></span>
+      </footer>
     {{/if}}
-  </ul>
-</nav>
+  </section>
+</div>
+
+
+
+

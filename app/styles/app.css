@@ -1,34 +1,189 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto-Regular.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  box-sizing: border-box;
 }
 
-nav {
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow: hidden;
+}
+
+
+/*  Header Section */ 
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .container {
+    width: 700px;
+  }
+}
+
+header {
+  color: #fff;
+  background: #1976d2;
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  min-height: 50px;
+  padding-left: 24px;
+  padding-right: 24px;
+
   display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  align-items: center;
 }
 
-.header {
+@media (min-width: 800px) {
+  header {
+    min-height: 64px;
+  }
+}
+
+header .title {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+}
+
+header img {
+  height: 24px;
+  width: 24px;
+  margin: 12px;
+}
+
+.message-container {
+  height: calc(100vh - 64px);
+  padding: 20px 15px;
+  overflow: hidden; 
+  overflow-y: scroll;
+
+  background-color: #f7f7f7;
+}
+
+@media (min-width: 800px) {
+  .message-container {
+    padding: 30px 20px;
+  }
+}
+
+
+/*  Messge Card */ 
+
+.message {
+  background: #FFF;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  margin-bottom: 10px;
+  padding: 14px;
+}
+
+.message-header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #CCC;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-title {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.profile-header small {
+  font-size: 65%;
+  color: #777;
+}
+
+.delete-section {
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.delete-section img {
+  cursor: pointer;
+}
+
+.message-body {
+  padding: 7px 14px;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 1.43;
+  letter-spacing: 0.01rem;
+  font-size: 0.875rem;
+}
+
+/*  Loader style */
+
+footer {
   text-align: center;
-  margin-top: 10px;
-}
-
-nav ul{ 
-  height: 300px;
-  width: 20%;
-}
-
-nav ul { 
-  overflow:hidden; 
-  overflow-y:scroll;
-}
-
-li {
-  padding: 10px 5px;
 }
 
 .loader {
   display: inline-block;
-  padding: 20px 3px;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.loader:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 4px;
+  border: 14px solid #1976d2;
+  border-color: #1976d2 transparent #1976d2 transparent;
+  animation: spinner 1.2s infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
 }

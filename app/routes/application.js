@@ -5,7 +5,6 @@ export default class ApplicationRoute extends Route {
     return {};
   }
 
-
   setupController(controller) {
     controller.fetchData();
   }

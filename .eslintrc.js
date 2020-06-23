@@ -20,7 +20,34 @@ module.exports = {
   env: {
     browser: true
   },
-  rules: {},
+  rules: {
+    'camelcase': 'off',
+    'func-call-spacing': ['error', 'never'],
+    'eol-last': ['error', 'always'],
+    'no-console': 'off',
+    'no-alert': 'error',
+    'eqeqeq': ['error', 'always'],
+    'no-eval': 'error',
+    'no-caller': 'error',
+    'no-undef': 'error',
+    'no-eq-null': 'error',
+    'no-useless-escape': 'off',
+    'no-extra-parens': 'off',
+    'no-trailing-spaces': 'error',
+    'no-multi-spaces': 'error',
+    'array-bracket-spacing': ['error', 'never'],
+    'object-curly-spacing': ['error', 'always'],
+    'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 1 }],
+    'space-before-function-paren': ['error', 'never'],
+    'semi': 'error',
+    'quotes': ['error', 'single'],
+    'comma-dangle': ['error', 'never'],
+    'no-restricted-imports': ['error', 'lockr'],
+    'comma-spacing': ['error', { 'before': false, 'after': true }],
+    'space-before-blocks': 'error',
+    'space-in-parens': ['error', 'never'],
+    'object-shorthand': ['error', 'always', { 'avoidQuotes': true }]
+  },
   overrides: [
     // node files
     {
