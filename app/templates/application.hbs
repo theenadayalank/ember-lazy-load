@@ -1,0 +1,16 @@
+<h3 class="header">Ember Lazy Load</h3>
+
+
+<nav>
+  <ul {{on "scroll" this.handleScrollEvent}}>
+    {{#each this.messageList as | message | }}
+      <li>
+        <h5>{{message.author.name}}</h5>
+        {{message.content}}
+      </li>
+    {{/each}}
+    {{#if this.isLoading}}
+      <span class="loader">Loadding.....</span>
+    {{/if}}
+  </ul>
+</nav>
